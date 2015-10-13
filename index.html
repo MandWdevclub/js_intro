@@ -26,6 +26,7 @@ var my_function = function() {
   }
   return "Result: " + sum;
 };
+var car = {type:"Fiat", model:500, color:"white"};
       </code>
     </pre>
 
@@ -65,6 +66,29 @@ increase_counter = function() {
     </code></pre>
 
     <button class="my-button" type="button">Click Me!</button>
+    <pre><code class="output"></code></pre>
+  </section>
+
+  <section class="sample-04">
+    <h2>Web Scraping</h2>
+    <pre>
+      <code class="sample-code">
+        warning: must open chrome with security disabled to test:
+        windows 8:
+        chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+
+        global.sample_04 = function() {
+          $.ajax({
+            url: "http://edwardmcenrue.com/",
+            dataType: 'text',
+            success: function(data) {
+              console.log($(data).find('h2')[0].firstChild.textContent);
+              $('.sample-04 .output').html("I am a: " + $(data).find('h2')[0].firstChild.textContent.toString());
+            }
+          });
+        };
+      </code>
+    </pre>
     <pre><code class="output"></code></pre>
   </section>
   <script src="basic.js"></script>
